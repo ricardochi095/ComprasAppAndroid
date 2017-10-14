@@ -3,14 +3,14 @@
     <string name="nameProducto">Ingrese nombre del producto ....</string>
     <string name="nameCant">Ingrese cantidad ....</string>
     <string name="namePrecio">Ingrese precio $....</string>
-    <string name="nameTotal">Total $0.-</string>
+    <string name="nameTotal">Total $0.0</string>
     <string name="nameDesc">Ingrese descuento % ....</string>
-    <string name="nameTotalDesc">Total $0.-</string>
+    <string name="nameTotalDesc">Total $0.0</string>
     <string name="btnCalcular">Calcular</string>
     <string name="btnAgregar">Agregar</string>
     <string name="btnAgregarP">Agregar Producto</string>
     <string name="sDesc">Descuento</string>
     <string name="name2">Ingrese el nombre del producto ....</string>
-    <string name="nameSubTotal">Subtotal $0.-</string>
-    <string name="nameTotalDes">Total Descuento $0.-</string>
+    <string name="nameSubTotal">Subtotal $0.0</string>
+    <string name="nameTotalDes">Total Descuento $0.0</string>
 </resources>

@@ -54,7 +54,11 @@ public class ModificarMiembro extends Activity implements OnClickListener {
         dbcon = new SQLControlador(this);
         dbcon.abrirBaseDeDatos();
 
-
+        //Arreglar esto
+        if (!etCant.getText().toString().equals("0")){
+            simpleSwitch.setChecked(true);
+            llDesc.setVisibility(View.VISIBLE);
+        }
 
         simpleSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 
@@ -90,9 +94,9 @@ public class ModificarMiembro extends Activity implements OnClickListener {
         et.setText(memberName);
         etCant.setText(prodCant);
         etPrecio.setText(prodPrecio);
-        txtTotal.setText(prodTotal);
+        txtTotal.setText("Total $"+prodTotal);
         etDesc.setText(prodDesc);
-        txtTotalDesc.setText(prodTotalDesc);
+        txtTotalDesc.setText("Total $" +prodTotalDesc);
 
         btnActualizar.setOnClickListener(this);
         btnEliminar.setOnClickListener(this);
