@@ -13,11 +13,11 @@ public class DBhelper extends SQLiteOpenHelper {
     public static final String TABLE_MEMBER = "productos";
     public static final String MIEMBRO_ID = "_id";
     public static final String MIEMBRO_NOMBRE = "nombre";
-    public static final String PRODUCTO_CANT = "0";
-    public static final String PRODUCTO_PRECIO = "0";
-    public static final String PRODUCTO_TOTAL= "0";
-    public static final String PRODUCTO_DESC = "0";
-    public static final String PRODUCTO_TOTAL_DESC = "0";
+    public static final String PRODUCTO_CANT = "cantidad";
+    public static final String PRODUCTO_PRECIO = "precio";
+    public static final String PRODUCTO_TOTAL= "total";
+    public static final String PRODUCTO_DESC = "descuento";
+    public static final String PRODUCTO_TOTAL_DESC = "totaldesc";
 
 
     // información del a base de datos
@@ -29,11 +29,11 @@ public class DBhelper extends SQLiteOpenHelper {
             + TABLE_MEMBER + "(" + MIEMBRO_ID
             + " INTEGER PRIMARY KEY AUTOINCREMENT, "
             + MIEMBRO_NOMBRE + " TEXT NOT NULL,"
-            + PRODUCTO_CANT+ " TEXT ,"
-            + PRODUCTO_PRECIO+" TEXT ,"
-            + PRODUCTO_TOTAL + " TEXT ,"
-            + PRODUCTO_DESC + " TEXT ,"
-            + PRODUCTO_TOTAL_DESC+" TEXT );";
+            + PRODUCTO_CANT+ " NUMBER ,"
+            + PRODUCTO_PRECIO+" NUMBER ,"
+            + PRODUCTO_TOTAL + " NUMBER ,"
+            + PRODUCTO_DESC + " NUMBER ,"
+            + PRODUCTO_TOTAL_DESC+" NUMBER );";
 
     public DBhelper(Context context) {
         super(context, DB_NAME, null,DB_VERSION);
