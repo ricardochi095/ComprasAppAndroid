@@ -110,9 +110,10 @@ public class ModificarMiembro extends Activity implements OnClickListener {
         switch (v.getId()) {
             case R.id.btnActualizar:
                 String memName_upd = et.getText().toString();
-                cant =0;desc=0;precio=0;total =0;totalDes=0;
+                cant =0;desc=0;precio=0.0;total =0.0;totalDes=0.0;
                 try{
-                    if(!etCant.getText().toString().equals("") && !etPrecio.getText().toString().equals("")){
+                    //!etCant.getText().toString().equals("") quite esto
+                    if(!etPrecio.getText().toString().equals("")){
                         cant = Integer.parseInt(etCant.getText().toString());
                         precio = Double.valueOf(etPrecio.getText().toString());
                         total = cant * precio;
@@ -147,9 +148,10 @@ public class ModificarMiembro extends Activity implements OnClickListener {
                 break;
             case R.id.btnCalcular:
                 String nombre = et.getText().toString();
-                cant =0;desc=0;precio=0;total =0;totalDes=0;
+                cant =0;desc=0;precio=0.0;total =0.0;totalDes=0.0;
                 try{
-                    if(!etCant.getText().toString().equals("") && !etPrecio.getText().toString().equals("")){
+                   // !etCant.getText().toString().equals("") &&
+                    if(!etPrecio.getText().toString().equals("")){
                         cant = Integer.parseInt(etCant.getText().toString());
                         precio = Double.valueOf(etPrecio.getText().toString());
                         total = cant * precio;
@@ -181,7 +183,6 @@ public class ModificarMiembro extends Activity implements OnClickListener {
 
         Intent home_intent = new Intent(getApplicationContext(),
                 MainActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-
         startActivity(home_intent);
     }
 }

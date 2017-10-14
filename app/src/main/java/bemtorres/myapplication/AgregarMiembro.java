@@ -82,7 +82,8 @@ public class AgregarMiembro extends Activity implements OnClickListener {
                 String name = et.getText().toString();
                 cant =0;desc=0;precio=0;total =0;totalDes=0;
                 try{
-                    if(!etCant.getText().toString().equals("") && !etPrecio.getText().toString().equals("")){
+                    //!etCant.getText().toString().equals("") &&
+                    if( !etPrecio.getText().toString().equals("")){
                         cant = Integer.parseInt(etCant.getText().toString());
                         precio = Double.valueOf(etPrecio.getText().toString());
                         total = cant * precio;
@@ -120,9 +121,10 @@ public class AgregarMiembro extends Activity implements OnClickListener {
                 break;
             case R.id.btnCalcular:
                 String nombre = et.getText().toString();
-                cant =0;desc=0;precio=0;total =0;totalDes=0;
+                cant =0;desc=0;precio=0.0;total =0.0;totalDes=0.0;
                try{
-                   if(!etCant.getText().toString().equals("") && !etPrecio.getText().toString().equals("")){
+                   //!etCant.getText().toString().equals("") &&
+                   if(!etPrecio.getText().toString().equals("")){
                        cant = Integer.parseInt(etCant.getText().toString());
                        precio = Double.valueOf(etPrecio.getText().toString());
                        total = cant * precio;
