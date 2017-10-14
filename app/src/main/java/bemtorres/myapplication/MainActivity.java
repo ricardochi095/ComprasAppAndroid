@@ -84,7 +84,7 @@ public class MainActivity extends ActionBarActivity {
                 String aux_miembroId = tv_miemID.getText().toString();
                 String aux_miembroNombre = tv_miemNombre.getText().toString();
                 String aux_productoCant = tv_prodCant.getText().toString();
-                String aux_productoPrecio = tv_prodCant.getText().toString();
+                String aux_productoPrecio = tv_prodPrecio.getText().toString();
                 String aux_productoTotal = tv_prodTotal.getText().toString();
                 String aux_productoDesc = tv_prodDesc.getText().toString();
                 String aux_productoTotalDesc = tv_prod_totalDesc.getText().toString();

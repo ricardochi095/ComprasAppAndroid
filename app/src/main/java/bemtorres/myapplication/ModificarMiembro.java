@@ -25,7 +25,7 @@ public class ModificarMiembro extends Activity implements OnClickListener {
     TextView txtTotal, txtTotalDesc;
     boolean estado = false;
     int cant =0, desc=0;
-    double precio=0, total =0, totalDes=0;
+    double precio=0.0, total =0.0, totalDes=0.0;
     LinearLayout llDesc;
     long member_id;
 
@@ -131,7 +131,7 @@ public class ModificarMiembro extends Activity implements OnClickListener {
                     }
 
                     txtTotal.setText("Total $"+total);
-                    txtTotalDesc.setText("Total 1 $"+totalDes);
+                    txtTotalDesc.setText("Total $"+totalDes);
                 }
                 catch (Exception ex){
                     Toast.makeText(getApplicationContext(), "Error al ingresar parametros", Toast.LENGTH_LONG).show();                }
@@ -168,7 +168,7 @@ public class ModificarMiembro extends Activity implements OnClickListener {
                     }
 
                     txtTotal.setText("Total $"+total);
-                    txtTotalDesc.setText("Total 1 $"+totalDes);
+                    txtTotalDesc.setText("Total $"+totalDes);
                 }
                 catch (Exception ex){
                     Toast.makeText(getApplicationContext(), "Error al ingresar parametros", Toast.LENGTH_LONG).show();

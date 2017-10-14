@@ -29,10 +29,10 @@ public class DBhelper extends SQLiteOpenHelper {
             + TABLE_MEMBER + "(" + MIEMBRO_ID
             + " INTEGER PRIMARY KEY AUTOINCREMENT, "
             + MIEMBRO_NOMBRE + " TEXT NOT NULL,"
-            + PRODUCTO_CANT+ " NUMBER ,"
+            + PRODUCTO_CANT+ " INTEGER ,"
             + PRODUCTO_PRECIO+" NUMBER ,"
             + PRODUCTO_TOTAL + " NUMBER ,"
-            + PRODUCTO_DESC + " NUMBER ,"
+            + PRODUCTO_DESC + " INTEGER ,"
             + PRODUCTO_TOTAL_DESC+" NUMBER );";
 
     public DBhelper(Context context) {
