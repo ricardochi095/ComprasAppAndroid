@@ -37,8 +37,6 @@ public class ModificarMiembro extends Activity implements OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.modificar_miembro);
 
-        dbcon = new SQLControlador(this);
-        dbcon.abrirBaseDeDatos();
         Switch simpleSwitch = (Switch) findViewById(R.id.switch1);
         simpleSwitch.setTextOn("Si");
         simpleSwitch.setTextOff("No");
@@ -51,6 +49,12 @@ public class ModificarMiembro extends Activity implements OnClickListener {
         txtTotal = (TextView) findViewById(R.id.txtTotal);
         etDesc = (EditText) findViewById(R.id.et_Desc);
         txtTotalDesc = (TextView) findViewById(R.id.txtTotalDesc);
+
+
+        dbcon = new SQLControlador(this);
+        dbcon.abrirBaseDeDatos();
+
+
 
         simpleSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 
@@ -75,11 +79,11 @@ public class ModificarMiembro extends Activity implements OnClickListener {
         Intent i = getIntent();
         String memberID = i.getStringExtra("miembroId");
         String memberName = i.getStringExtra("miembroNombre");
-        String prodCant = i.getStringExtra("prodCant");
-        String prodPrecio = i.getStringExtra("prodPrecio");
-        String prodTotal = i.getStringExtra("prodTotal");
-        String prodDesc = i.getStringExtra("prodDesc");
-        String prodTotalDesc = i.getStringExtra("prodTotalDesc");
+        String prodCant = i.getStringExtra("prod_cant");
+        String prodPrecio = i.getStringExtra("prod_precio");
+        String prodTotal = i.getStringExtra("prod_total");
+        String prodDesc = i.getStringExtra("prod_desc");
+        String prodTotalDesc = i.getStringExtra("prod_total_desc");
 
         member_id = Long.parseLong(memberID);
 

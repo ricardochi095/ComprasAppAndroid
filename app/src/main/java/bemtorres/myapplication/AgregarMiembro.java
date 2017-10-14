@@ -31,8 +31,8 @@ public class AgregarMiembro extends Activity implements OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.agregar_miembro);
+
         Switch simpleSwitch = (Switch) findViewById(R.id.switch1);
         simpleSwitch.setTextOn("Si");
         simpleSwitch.setTextOff("No");

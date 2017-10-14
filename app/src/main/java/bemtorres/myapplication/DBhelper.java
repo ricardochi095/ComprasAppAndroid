@@ -29,11 +29,11 @@ public class DBhelper extends SQLiteOpenHelper {
             + TABLE_MEMBER + "(" + MIEMBRO_ID
             + " INTEGER PRIMARY KEY AUTOINCREMENT, "
             + MIEMBRO_NOMBRE + " TEXT NOT NULL,"
-            + PRODUCTO_CANT+ " INTEGER,"
-            + PRODUCTO_PRECIO+" REAL,"
-            + PRODUCTO_TOTAL + " REAL,"
-            + PRODUCTO_DESC + " INTEGER,"
-            + PRODUCTO_TOTAL_DESC+" REAL);";
+            + PRODUCTO_CANT+ " TEXT ,"
+            + PRODUCTO_PRECIO+" TEXT ,"
+            + PRODUCTO_TOTAL + " TEXT ,"
+            + PRODUCTO_DESC + " TEXT ,"
+            + PRODUCTO_TOTAL_DESC+" TEXT );";
 
     public DBhelper(Context context) {
         super(context, DB_NAME, null,DB_VERSION);
@@ -41,7 +41,7 @@ public class DBhelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL(CREATE_TABLE);
+       db.execSQL(CREATE_TABLE);
     }
 
     @Override

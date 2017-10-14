@@ -100,5 +100,5 @@ public class MainActivity extends ActionBarActivity {
                 startActivity(modify_intent);
             }
         });
-    }  //termina el onCreate
-} //termina clase
+    }
+}

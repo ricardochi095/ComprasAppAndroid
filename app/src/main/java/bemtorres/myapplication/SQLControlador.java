@@ -30,7 +30,7 @@ public class SQLControlador {
     }
 
     public boolean insertarDatos(String name, int cantidad, double precio, double total, int desc, double totalDesc) {
-        try{
+
             ContentValues cv = new ContentValues();
             cv.put(DBhelper.MIEMBRO_NOMBRE, name);
             cv.put(DBhelper.PRODUCTO_CANT, cantidad);
@@ -39,12 +39,7 @@ public class SQLControlador {
             cv.put(DBhelper.PRODUCTO_DESC, desc);
             cv.put(DBhelper.PRODUCTO_TOTAL_DESC, totalDesc);
             database.insert(DBhelper.TABLE_MEMBER, null, cv);
-
             return true;
-        }
-        catch (Exception ex){
-            return false;
-        }
 
     }
 
