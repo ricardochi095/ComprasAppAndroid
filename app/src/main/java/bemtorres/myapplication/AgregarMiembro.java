@@ -56,7 +56,7 @@ public class AgregarMiembro extends Activity implements OnClickListener {
                 if (isChecked){
                     llDesc.setVisibility(View.VISIBLE);
                     estado = true;
-                }
+            }
                 else{
                     llDesc.setVisibility(View.GONE);
                     estado = false;
@@ -107,8 +107,13 @@ public class AgregarMiembro extends Activity implements OnClickListener {
                     Toast.makeText(getApplicationContext(), "Error al ingresar parametros", Toast.LENGTH_LONG).show();
                 }
 
-
-                dbconeccion.insertarDatos(name);
+                //Agregar a la base de datos
+                if (dbconeccion.insertarDatos(name,cant,precio,total,desc,totalDes)){
+                     Toast.makeText(getApplicationContext(), "Agregado a la BD", Toast.LENGTH_LONG).show();
+                }
+                else{
+                Toast.makeText(getApplicationContext(), "Error Insertar Base de datos", Toast.LENGTH_LONG).show();
+                }
                 Intent main = new Intent(AgregarMiembro.this, MainActivity.class)
                         .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(main);
