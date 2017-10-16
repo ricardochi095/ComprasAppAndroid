@@ -92,11 +92,20 @@ public class ModificarMiembro extends Activity implements OnClickListener {
         member_id = Long.parseLong(memberID);
 
         et.setText(memberName);
-        etCant.setText(prodCant);
-        etPrecio.setText(prodPrecio);
-        txtTotal.setText("Total $"+prodTotal);
-        etDesc.setText(prodDesc);
-        txtTotalDesc.setText("Total $" +prodTotalDesc);
+        if(!prodCant.equals("") && !prodCant.equals("0") && !prodCant.equals("0.0")){etCant.setText(prodCant);}
+        if(!prodPrecio.equals("") && !prodPrecio.equals("0") && !prodPrecio.equals("0.0")){etPrecio.setText(prodPrecio);}
+        if(!prodTotal.equals("") && !prodTotal.equals("0") && !prodTotal.equals("0.0")){txtTotal.setText("Total $"+prodTotal);}
+        if(!prodDesc.equals("") && !prodDesc.equals("0") && !prodDesc.equals("0.0")){
+            etDesc.setText(prodDesc);
+            txtTotalDesc.setText("Total $" +prodTotalDesc);
+            simpleSwitch.setChecked(true);
+            llDesc.setVisibility(View.VISIBLE);
+        }
+        else{
+            simpleSwitch.setChecked(false);
+            llDesc.setVisibility(View.GONE);
+        }
+
 
         btnActualizar.setOnClickListener(this);
         btnEliminar.setOnClickListener(this);
