@@ -1,13 +1,8 @@
+# Aplicacion para hacer un listado de compras
+
 ![Logo](https://github.com/bemtorres/bemtorres.github.io/blob/master/assets/imagen/comprasapp.png)
 
-Aplicacion de Listado de compras
-
-**Proyecto Personal** : Listado de compras
-
-**Hecho por**: Benjamin mora
-
-
-![](https://github.com/bemtorres/bemtorres.github.io/blob/master/assets/imagen/1.png)
+**Proyecto Personal Realizado por** : Benjamin mora
 
 ![Logo](https://github.com/bemtorres/bemtorres.github.io/blob/master/assets/imagen/3.png)
 
@@ -17,11 +12,19 @@ Aplicacion de Listado de compras
 
 
 ## Es Hora de probar!
-
-
-
+### Pero...
 ### ¿Que falta?
-#### Falta hacer la consulta SQL para tener el total de la compras, total de los descuentos y total final
+
+*Consultas SQLite
+  1. Total de Compras
+  2. Total de Descuento
+  3. Total Final
+
+*Agregar
+  1. Tabla sql para agregar compras y almacenar las comprar del mes
+  2. Sacar fotos a los productos y agregar un elemesto a la tabla de ´Productos´
+  3. Compartir los precios a las redes sociales
+  4. etc...
 
 
 **Build status:** master estable
