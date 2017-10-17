@@ -6,7 +6,43 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/txtNombre11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/nombre" />
+
+        <TextView
+            android:id="@+id/txtPrecio11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/precio" />
+
+        <TextView
+            android:id="@+id/textCant11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/cantidad" />
+
+        <TextView
+            android:id="@+id/textTotal11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/total" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <TextView
@@ -18,33 +54,62 @@
 
         <TextView
             android:id="@+id/miembro_nombre"
-            android:layout_width="fill_parent"
+            android:layout_width="103dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:padding="15dp"
             android:textSize="17sp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/prod_cant"
-            android:layout_width="fill_parent"
+            android:id="@+id/propSimboloPreci"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:text="@string/simboloPeso"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/prod_precio"
+            android:layout_width="75dp"
+            android:layout_height="40dp"
+            android:gravity="left"
+            android:textSize="24sp"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/prop_Ventana"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/simboloMultiplicar"
+            android:textColorLink="@android:color/holo_orange_dark"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/prod_cant"
+            android:layout_width="89dp"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/textPrecio2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/simboloPeso"
+            android:textColor="@android:color/holo_orange_light"
+            android:textSize="24sp"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/prod_total"
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/prod_precio"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:visibility="gone" />
+            android:textColor="@android:color/holo_orange_light"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:visibility="visible" />
 
         <TextView
             android:id="@+id/prod_desc"

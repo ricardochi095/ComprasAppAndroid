@@ -18,7 +18,7 @@ public class MainActivity extends ActionBarActivity {
     Button btnAgregarMiembro;
     ListView lista;
     SQLControlador dbconeccion;
-    TextView tv_miemID, tv_miemNombre, tv_prodCant, tv_prodPrecio, tv_prodTotal, tv_prodDesc, tv_prod_totalDesc;
+    TextView tv_miemID, tv_miemNombre, tv_prodCant, tv_prodPrecio, tv_prodTotal, tv_prodDesc, tv_prod_totalDesc, tv_ventana;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +29,7 @@ public class MainActivity extends ActionBarActivity {
         dbconeccion.abrirBaseDeDatos();
         btnAgregarMiembro = (Button) findViewById(R.id.btnAgregarMiembro);
         lista = (ListView) findViewById(R.id.listViewMiembros);
+        tv_ventana = (TextView) findViewById(R.id.prop_Ventana);
 
         //acción del boton agregar miembro
         btnAgregarMiembro.setOnClickListener(new OnClickListener() {
@@ -80,6 +81,7 @@ public class MainActivity extends ActionBarActivity {
                 tv_prodTotal = (TextView) view.findViewById(R.id.prod_total);
                 tv_prodDesc = (TextView) view.findViewById(R.id.prod_desc);
                 tv_prod_totalDesc = (TextView) view.findViewById(R.id.prod_total_desc);
+
 
                 String aux_miembroId = tv_miemID.getText().toString();
                 String aux_miembroNombre = tv_miemNombre.getText().toString();

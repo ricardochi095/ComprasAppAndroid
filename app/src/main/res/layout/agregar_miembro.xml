@@ -39,6 +39,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="@string/nameTotal"
+        android:textColor="@android:color/holo_blue_dark"
         android:textSize="30sp"
         android:textStyle="bold" />
 

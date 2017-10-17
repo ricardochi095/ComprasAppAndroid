@@ -79,4 +79,10 @@ public class SQLControlador {
         database.delete(DBhelper.TABLE_MEMBER, DBhelper.MIEMBRO_ID + "="
                 + memberID, null);
     }
+
+    public double calcularTotal(){
+        double resultado = 0;
+       // Cursor c= database.query("");
+        return 0.0;
+    }
 }

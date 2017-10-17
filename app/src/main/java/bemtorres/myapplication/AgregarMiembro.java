@@ -110,7 +110,7 @@ public class AgregarMiembro extends Activity implements OnClickListener {
 
                 //Agregar a la base de datos
                 if (dbconeccion.insertarDatos(name,cant,precio,total,desc,totalDes)){
-                     Toast.makeText(getApplicationContext(), "Agregado a la BD", Toast.LENGTH_LONG).show();
+                    // Toast.makeText(getApplicationContext(), "Agregado a la BD", Toast.LENGTH_LONG).show();
                 }
                 else{
                 Toast.makeText(getApplicationContext(), "Error Insertar Base de datos", Toast.LENGTH_LONG).show();
