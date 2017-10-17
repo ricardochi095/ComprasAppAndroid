@@ -15,12 +15,12 @@
 ### Pero...
 ### ¿Que falta?
 
-*Consultas SQLite
+#### Consultas SQLite
   1. Total de Compras
   2. Total de Descuento
   3. Total Final
 
-*Agregar
+#### Agregar
   1. Tabla sql para agregar compras y almacenar las comprar del mes
   2. Sacar fotos a los productos y agregar un elemesto a la tabla de ´Productos´
   3. Compartir los precios a las redes sociales
