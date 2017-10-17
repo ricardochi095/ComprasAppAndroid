@@ -1,8 +1,17 @@
-# Aplicacion de Listado de compras
-Proyecto Personal : Listado de compras
->Hecho por: Benjamin mora
+![Logo](https://github.com/bemtorres/bemtorres.github.io/blob/master/assets/imagen/comprasapp.png)
 
-# [Drobox](https://www.dropbox.com) Android app
+Aplicacion de Listado de compras
+
+**Proyecto Personal** : Listado de compras
+
+**Hecho por**: Benjamin mora
+
+
+![](https://github.com/bemtorres/bemtorres.github.io/blob/master/assets/imagen/1.png)
+
+![Logo](https://github.com/bemtorres/bemtorres.github.io/blob/master/assets/imagen/3.png)
+
+# Descarga Aqui Compras Android app
 
 [![](https://owncloud.org/wp-content/themes/owncloudorgnew/assets/img/clients/buttons/googleplay.png)](https://www.dropbox.com/sh/vimk00gcuc71e39/AAAOfvFHyL43uz-DK-2dY5Nra?dl=0)
 
@@ -16,7 +25,6 @@ Proyecto Personal : Listado de compras
 
 
 **Build status:** master estable
-[![](https://www.dropbox.com/s/p4j3d5n9mcstrre/principal4.jpg)]
 
 **Beta version** [beta version](https://github.com/bemtorres/ComprasAppAndroid/blob/master/ComprasOficial.apk)
 
