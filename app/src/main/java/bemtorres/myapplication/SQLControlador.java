@@ -9,6 +9,8 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
+import static bemtorres.myapplication.DBhelper.TABLE_MEMBER;
+
 public class SQLControlador {
 
     private DBhelper dbhelper;
@@ -38,7 +40,7 @@ public class SQLControlador {
             cv.put(DBhelper.PRODUCTO_TOTAL, total);
             cv.put(DBhelper.PRODUCTO_DESC, desc);
             cv.put(DBhelper.PRODUCTO_TOTAL_DESC, totalDesc);
-            database.insert(DBhelper.TABLE_MEMBER, null, cv);
+            database.insert(TABLE_MEMBER, null, cv);
             return true;
 
     }
@@ -53,7 +55,7 @@ public class SQLControlador {
                 DBhelper.PRODUCTO_DESC,
                 DBhelper.PRODUCTO_TOTAL_DESC
         };
-        Cursor c = database.query(DBhelper.TABLE_MEMBER, todasLasColumnas, null,
+        Cursor c = database.query(TABLE_MEMBER, todasLasColumnas, null,
                 null, null, null,null);
         if (c != null) {
             c.moveToFirst();
@@ -70,19 +72,30 @@ public class SQLControlador {
         cvActualizar.put(DBhelper.PRODUCTO_DESC, descuento);
         cvActualizar.put(DBhelper.PRODUCTO_TOTAL_DESC, totalDesc);
 
-        int i = database.update(DBhelper.TABLE_MEMBER, cvActualizar,
+        int i = database.update(TABLE_MEMBER, cvActualizar,
                 DBhelper.MIEMBRO_ID + " = " + memberID, null);
         return i;
     }
 
     public void deleteData(long memberID) {
-        database.delete(DBhelper.TABLE_MEMBER, DBhelper.MIEMBRO_ID + "="
+        database.delete(TABLE_MEMBER, DBhelper.MIEMBRO_ID + "="
                 + memberID, null);
     }
 
-    public double calcularTotal(){
-        double resultado = 0;
-       // Cursor c= database.query("");
+    public double calcularSubTotal(){
+        String consulta="SELECT SUM(total) AS TOTAL FROM "+TABLE_MEMBER+" WHERE total>0";
+        Cursor cursor = database.rawQuery(consulta,null);
+        if (cursor.moveToFirst()){
+            return  cursor.getDouble(0);
+        }
+        return 0.0;
+    }
+    public double calcularTotalDesc(){
+        String consulta="SELECT SUM(totalDesc) AS TOTAL_Descuento FROM "+TABLE_MEMBER+" WHERE total>0";
+        Cursor cursor = database.rawQuery(consulta,null);
+        if (cursor.moveToFirst()){
+            return  cursor.getDouble(0);
+        }
         return 0.0;
     }
 }

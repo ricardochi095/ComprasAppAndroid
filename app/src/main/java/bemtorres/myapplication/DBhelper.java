@@ -15,7 +15,7 @@ public class DBhelper extends SQLiteOpenHelper {
     public static final String MIEMBRO_NOMBRE = "nombre";
     public static final String PRODUCTO_CANT = "cantidad";
     public static final String PRODUCTO_PRECIO = "precio";
-    public static final String PRODUCTO_TOTAL= "total";
+    public static final String PRODUCTO_TOTAL = "total";
     public static final String PRODUCTO_DESC = "descuento";
     public static final String PRODUCTO_TOTAL_DESC = "totaldesc";
 

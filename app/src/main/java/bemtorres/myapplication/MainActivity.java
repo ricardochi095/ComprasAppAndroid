@@ -18,7 +18,7 @@ public class MainActivity extends ActionBarActivity {
     Button btnAgregarMiembro;
     ListView lista;
     SQLControlador dbconeccion;
-    TextView tv_miemID, tv_miemNombre, tv_prodCant, tv_prodPrecio, tv_prodTotal, tv_prodDesc, tv_prod_totalDesc, tv_ventana;
+    TextView tv_miemID, tv_miemNombre, tv_prodCant, tv_prodPrecio, tv_prodTotal, tv_prodDesc, tv_prod_totalDesc, tv_ventana, tv_subTotal, tv_totalDes, tv_totalFinal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +30,10 @@ public class MainActivity extends ActionBarActivity {
         btnAgregarMiembro = (Button) findViewById(R.id.btnAgregarMiembro);
         lista = (ListView) findViewById(R.id.listViewMiembros);
         tv_ventana = (TextView) findViewById(R.id.prop_Ventana);
+        tv_subTotal = (TextView) findViewById(R.id.txtSubTotal);
+        tv_totalDes = (TextView) findViewById(R.id.txtTotalDesc);
+        tv_totalFinal = (TextView) findViewById(R.id.txtTotalFinal);
+        //agregar totales aca !
 
         //acción del boton agregar miembro
         btnAgregarMiembro.setOnClickListener(new OnClickListener() {
@@ -68,6 +72,22 @@ public class MainActivity extends ActionBarActivity {
 
         adapter.notifyDataSetChanged();
         lista.setAdapter(adapter);
+
+        //se Agregan las consultas de Sql
+        double subTotalFinal =0.0;
+        double totalDesFinal = 0.0;
+        subTotalFinal = dbconeccion.calcularSubTotal();
+        totalDesFinal = dbconeccion.calcularTotalDesc();
+        if (subTotalFinal>0){
+            tv_subTotal.setText("SubTotal $"+subTotalFinal);
+            if (totalDesFinal>0){
+                tv_totalDes.setText("Total Descuento $"+ totalDesFinal);
+            }
+            double totalFinal = subTotalFinal-totalDesFinal;
+            tv_totalFinal.setText("Total $"+totalFinal);
+        }
+
+
 
         // acción cuando hacemos click en item para poder modificarlo o eliminarlo
         lista.setOnItemClickListener(new OnItemClickListener() {

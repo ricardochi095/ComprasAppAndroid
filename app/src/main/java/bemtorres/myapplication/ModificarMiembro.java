@@ -100,10 +100,12 @@ public class ModificarMiembro extends Activity implements OnClickListener {
             txtTotalDesc.setText("Total $" +prodTotalDesc);
             simpleSwitch.setChecked(true);
             llDesc.setVisibility(View.VISIBLE);
+            estado = true;
         }
         else{
             simpleSwitch.setChecked(false);
             llDesc.setVisibility(View.GONE);
+            estado = false;
         }
 
 
