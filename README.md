@@ -1,3 +1,6 @@
+**Notificacion de error**
+Total de descuento esta calculando mal
+
 # Aplicacion para hacer un listado de compras
 
 ![Logo](https://raw.githubusercontent.com/bemtorres/bemtorres.github.io/cb048b7289221bef8d18fa8266e776e50250d740/assets/imagen/wide-social-banner.png)
