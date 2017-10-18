@@ -89,13 +89,18 @@ public class SQLControlador {
             return  cursor.getDouble(0);
         }
         return 0.0;
+
     }
     public double calcularTotalDesc(){
-        String consulta="SELECT SUM(totalDesc) AS TOTAL_Descuento FROM "+TABLE_MEMBER+" WHERE total>0";
+        String consulta="SELECT SUM(total * (descuento/100.0)) AS TOTAL_Descuento FROM "+TABLE_MEMBER+" WHERE total>0";
         Cursor cursor = database.rawQuery(consulta,null);
         if (cursor.moveToFirst()){
             return  cursor.getDouble(0);
         }
         return 0.0;
+    }
+    public double totalFinal(){
+        return  calcularSubTotal() - calcularTotalDesc();
+
     }
 }

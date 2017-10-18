@@ -19,7 +19,7 @@ import android.widget.Toast;
 
 public class AgregarMiembro extends Activity implements OnClickListener {
     EditText et, etCant, etPrecio, etDesc;
-    TextView txtTotal, txtTotalDesc;
+    TextView txtTotal, txtTotalDesc, txtAhorro;
     LinearLayout llDesc;
     Button btnAgregar, read_bt, btnCalcular;
     boolean estado = false;
@@ -44,6 +44,7 @@ public class AgregarMiembro extends Activity implements OnClickListener {
         etPrecio = (EditText) findViewById(R.id.et_Precio);
         txtTotal = (TextView) findViewById(R.id.txtTotal);
         etDesc = (EditText) findViewById(R.id.et_Desc);
+        txtAhorro = (TextView) findViewById(R.id.txtAhorras);
         txtTotalDesc = (TextView) findViewById(R.id.txtTotalDesc);
 
         btnAgregar = (Button) findViewById(R.id.btnAgregarId);
@@ -56,10 +57,12 @@ public class AgregarMiembro extends Activity implements OnClickListener {
                 if (isChecked){
                     llDesc.setVisibility(View.VISIBLE);
                     estado = true;
+                    txtAhorro.setVisibility(View.VISIBLE);
             }
                 else{
                     llDesc.setVisibility(View.GONE);
                     estado = false;
+                    txtAhorro.setVisibility(View.GONE);
                 }
             }
 
@@ -126,11 +129,12 @@ public class AgregarMiembro extends Activity implements OnClickListener {
                    //!etCant.getText().toString().equals("") &&
                    if(!etPrecio.getText().toString().equals("")){
                        cant = Integer.parseInt(etCant.getText().toString());
-                       precio = Double.valueOf(etPrecio.getText().toString());
-                       total = cant * precio;
+                       precio = Double.valueOf(etPrecio.getText().toString()); //obtiene precio
+                       total = cant * precio; //Calcula Total de la compra
                        if (estado){
                            if (!etDesc.getText().toString().equals("")){
                                desc = Integer.parseInt(etDesc.getText().toString());
+                               txtAhorro.setText("Ahorras $"+(total * (desc/100.0)));
                                totalDes = total - (total*(desc/100.0));
                            }
                            else{

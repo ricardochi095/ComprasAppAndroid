@@ -81,9 +81,9 @@ public class MainActivity extends ActionBarActivity {
         if (subTotalFinal>0){
             tv_subTotal.setText("SubTotal $"+subTotalFinal);
             if (totalDesFinal>0){
-                tv_totalDes.setText("Total Descuento $"+ totalDesFinal);
+                tv_totalDes.setText("Ahorras $"+ totalDesFinal);
             }
-            double totalFinal = subTotalFinal-totalDesFinal;
+            double totalFinal = dbconeccion.totalFinal();
             tv_totalFinal.setText("Total $"+totalFinal);
         }
 
