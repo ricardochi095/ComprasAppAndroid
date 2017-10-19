@@ -7,7 +7,7 @@ Total de descuento esta calculando mal
 
 **Proyecto Personal Realizado por** : Benjamin mora
 
-# Descarga Aqui Compras Android app
+# Descarga Aqui Compras Android app 
 
 [![](https://github.com/bemtorres/bemtorres.github.io/blob/master/assets/imagen/Promo.png?raw=true)](https://www.dropbox.com/s/exdaoux32xez4jc/ComprasApp%28v2.0%29.apk)
 
