@@ -1,24 +1,25 @@
+**Notificacion de error**
+Total de descuento esta calculando mal
+
 # Aplicacion para hacer un listado de compras
 
-![Logo](https://github.com/bemtorres/bemtorres.github.io/blob/master/assets/imagen/comprasapp.png)
+![Logo](https://raw.githubusercontent.com/bemtorres/bemtorres.github.io/cb048b7289221bef8d18fa8266e776e50250d740/assets/imagen/wide-social-banner.png)
 
 **Proyecto Personal Realizado por** : Benjamin mora
 
-![Logo](https://github.com/bemtorres/bemtorres.github.io/blob/master/assets/imagen/3.png)
-
 # Descarga Aqui Compras Android app
 
-[![](https://owncloud.org/wp-content/themes/owncloudorgnew/assets/img/clients/buttons/googleplay.png)](https://www.dropbox.com/sh/vimk00gcuc71e39/AAAOfvFHyL43uz-DK-2dY5Nra?dl=0)
+[![](https://github.com/bemtorres/bemtorres.github.io/blob/master/assets/imagen/Promo.png?raw=true)](https://www.dropbox.com/s/exdaoux32xez4jc/ComprasApp%28v2.0%29.apk)
 
 
 ## Es Hora de probar!
 ### Pero...
 ### ¿Que falta?
 
-#### Consultas SQLite
-  1. Total de Compras
-  2. Total de Descuento
-  3. Total Final
+#### Consultas SQLite *(Version 2.0 implementado)*
+  1. ~~Total de Compras~~
+  2. ~~Total de Descuento~~
+  3. ~~Total Final~~
 
 #### Agregar
   1. Tabla sql para agregar compras y almacenar las comprar del mes
@@ -29,6 +30,6 @@
 
 **Build status:** master estable
 
-**Beta version** [beta version](https://github.com/bemtorres/ComprasAppAndroid/blob/master/ComprasOficial.apk)
+**Beta version** [beta version 2.0](https://www.dropbox.com/s/exdaoux32xez4jc/ComprasApp%28v2.0%29.apk)
 
 **License:** [GPLv2](https://github.com/owncloud/android/blob/master/LICENSE.txt)
