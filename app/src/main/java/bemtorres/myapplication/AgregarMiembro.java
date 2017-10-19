@@ -67,14 +67,10 @@ public class AgregarMiembro extends Activity implements OnClickListener {
             }
 
         });
-
-
         dbconeccion = new SQLControlador(this);
         dbconeccion.abrirBaseDeDatos();
         btnAgregar.setOnClickListener(this);
         btnCalcular.setOnClickListener(this);
-
-
     }
 
     @Override
@@ -84,33 +80,7 @@ public class AgregarMiembro extends Activity implements OnClickListener {
             case R.id.btnAgregarId:
                 String name = et.getText().toString();
                 cant =0;desc=0;precio=0;total =0;totalDes=0;
-                try{
-                    //!etCant.getText().toString().equals("") &&
-                    if( !etPrecio.getText().toString().equals("")){
-                        cant = Integer.parseInt(etCant.getText().toString());
-                        precio = Double.valueOf(etPrecio.getText().toString());
-                        total = cant * precio;
-                        if (estado){
-                            if (!etDesc.getText().toString().equals("")){
-                                desc = Integer.parseInt(etDesc.getText().toString());
-                                totalDes = total - (total*(desc/100.0));
-                            }
-                            else{
-                               // Toast.makeText(getApplicationContext(), "Ingrese Parametros descuento", Toast.LENGTH_LONG).show();
-                            }
-                        }
-                    }
-                    else{
-                       // Toast.makeText(getApplicationContext(), "Ingrese Parametros General", Toast.LENGTH_LONG).show();
-                    }
-
-                    txtTotal.setText("Total $"+total);
-                    txtTotalDesc.setText("Total $"+totalDes);
-                }
-                catch (Exception ex){
-                    Toast.makeText(getApplicationContext(), "Error al ingresar parametros", Toast.LENGTH_LONG).show();
-                }
-
+                Calcular();
                 //Agregar a la base de datos
                 if (dbconeccion.insertarDatos(name,cant,precio,total,desc,totalDes)){
                     // Toast.makeText(getApplicationContext(), "Agregado a la BD", Toast.LENGTH_LONG).show();
@@ -124,37 +94,40 @@ public class AgregarMiembro extends Activity implements OnClickListener {
                 break;
             case R.id.btnCalcular:
                 String nombre = et.getText().toString();
-                cant =0;desc=0;precio=0.0;total =0.0;totalDes=0.0;
-               try{
-                   //!etCant.getText().toString().equals("") &&
-                   if(!etPrecio.getText().toString().equals("")){
-                       cant = Integer.parseInt(etCant.getText().toString());
-                       precio = Double.valueOf(etPrecio.getText().toString()); //obtiene precio
-                       total = cant * precio; //Calcula Total de la compra
-                       if (estado){
-                           if (!etDesc.getText().toString().equals("")){
-                               desc = Integer.parseInt(etDesc.getText().toString());
-                               txtAhorro.setText("Ahorras $"+(total * (desc/100.0)));
-                               totalDes = total - (total*(desc/100.0));
-                           }
-                           else{
-                               Toast.makeText(getApplicationContext(), "Ingrese Parametros descuento", Toast.LENGTH_LONG).show();
-                           }
-                       }
-                   }
-                   else{
-                       Toast.makeText(getApplicationContext(), "Ingrese Parametros General", Toast.LENGTH_LONG).show();
-                   }
-
-                   txtTotal.setText("Total $"+total);
-                   txtTotalDesc.setText("Total $"+totalDes);
-               }
-               catch (Exception ex){
-                   Toast.makeText(getApplicationContext(), "Error al ingresar parametros", Toast.LENGTH_LONG).show();
-               }
-               break;
-            default:
+                Calcular();
                 break;
+        }
+    }
+
+    public void Calcular(){
+        cant =0;desc=0;precio=0.0;total =0.0;totalDes=0.0;
+        try{
+            if(!etCant.getText().toString().equals("")){
+                cant = Integer.parseInt(etCant.getText().toString());
+            }
+            if(!etPrecio.getText().toString().equals("")){
+                precio = Double.valueOf(etPrecio.getText().toString()); //obtiene precio
+                total = cant * precio; //Calcula Total de la compra
+                if (estado){
+                    if (!etDesc.getText().toString().equals("")){
+                        desc = Integer.parseInt(etDesc.getText().toString());
+                        txtAhorro.setText("Ahorras $"+(total * (desc/100.0)));
+                        totalDes = total - (total*(desc/100.0));
+                    }
+                    else{
+                       // Toast.makeText(getApplicationContext(), "Ingrese Parametros descuento", Toast.LENGTH_LONG).show();
+                    }
+                }
+            }
+            else{
+               // Toast.makeText(getApplicationContext(), "Ingrese Parametros General", Toast.LENGTH_LONG).show();
+            }
+
+            txtTotal.setText("Total $"+total);
+            txtTotalDesc.setText("Total $"+totalDes);
+        }
+        catch (Exception ex){
+            Toast.makeText(getApplicationContext(), "Error al ingresar parametros", Toast.LENGTH_LONG).show();
         }
     }
 }

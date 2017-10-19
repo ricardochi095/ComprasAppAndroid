@@ -1,7 +1,7 @@
 package bemtorres.myapplication;
 
 /**
- * Created by benja on 13/10/2017.
+ * Created by bemtorres on 13/10/2017.
  */
 import android.app.Activity;
 import android.content.Intent;
@@ -22,7 +22,7 @@ public class ModificarMiembro extends Activity implements OnClickListener {
 
     Button btnActualizar, btnEliminar, btnCalcular;
     EditText et, etCant, etPrecio, etDesc;
-    TextView txtTotal, txtTotalDesc;
+    TextView txtTotal, txtTotalDesc, txtAhorro;
     boolean estado = false;
     int cant =0, desc=0;
     double precio=0.0, total =0.0, totalDes=0.0;
@@ -48,6 +48,7 @@ public class ModificarMiembro extends Activity implements OnClickListener {
         etPrecio = (EditText) findViewById(R.id.et_Precio);
         txtTotal = (TextView) findViewById(R.id.txtTotal);
         etDesc = (EditText) findViewById(R.id.et_Desc);
+        txtAhorro = (TextView)findViewById(R.id.txtAhorras);
         txtTotalDesc = (TextView) findViewById(R.id.txtTotalDesc);
 
 
@@ -100,6 +101,8 @@ public class ModificarMiembro extends Activity implements OnClickListener {
             txtTotalDesc.setText("Total $" +prodTotalDesc);
             simpleSwitch.setChecked(true);
             llDesc.setVisibility(View.VISIBLE);
+            double res = (Double.valueOf(prodTotal) * (Double.valueOf(prodDesc)/100.0));
+            txtAhorro.setText("Ahorras $"+(res));
             estado = true;
         }
         else{
@@ -122,33 +125,7 @@ public class ModificarMiembro extends Activity implements OnClickListener {
             case R.id.btnActualizar:
                 String memName_upd = et.getText().toString();
                 cant =0;desc=0;precio=0.0;total =0.0;totalDes=0.0;
-                try{
-                    //!etCant.getText().toString().equals("") quite esto
-                    if(!etPrecio.getText().toString().equals("")){
-                        cant = Integer.parseInt(etCant.getText().toString());
-                        precio = Double.valueOf(etPrecio.getText().toString());
-                        total = cant * precio;
-                        if (estado){
-                            if (!etDesc.getText().toString().equals("")){
-                                desc = Integer.parseInt(etDesc.getText().toString());
-                                totalDes = total - (total*(desc/100.0));
-                            }
-                            else{
-                                // Toast.makeText(getApplicationContext(), "Ingrese Parametros descuento", Toast.LENGTH_LONG).show();
-                            }
-                        }
-                    }
-                    else{
-                        // Toast.makeText(getApplicationContext(), "Ingrese Parametros General", Toast.LENGTH_LONG).show();
-                    }
-
-                    txtTotal.setText("Total $"+total);
-                    txtTotalDesc.setText("Total $"+totalDes);
-                }
-                catch (Exception ex){
-                    Toast.makeText(getApplicationContext(), "Error al ingresar parametros", Toast.LENGTH_LONG).show();                }
-
-
+                calcular();
                 dbcon.actualizarDatos(member_id, memName_upd,cant,precio,total,desc,totalDes );
                 this.returnHome();
                 break;
@@ -159,33 +136,7 @@ public class ModificarMiembro extends Activity implements OnClickListener {
                 break;
             case R.id.btnCalcular:
                 String nombre = et.getText().toString();
-                cant =0;desc=0;precio=0.0;total =0.0;totalDes=0.0;
-                try{
-                   // !etCant.getText().toString().equals("") &&
-                    if(!etPrecio.getText().toString().equals("")){
-                        cant = Integer.parseInt(etCant.getText().toString());
-                        precio = Double.valueOf(etPrecio.getText().toString());
-                        total = cant * precio;
-                        if (estado){
-                            if (!etDesc.getText().toString().equals("")){
-                                desc = Integer.parseInt(etDesc.getText().toString());
-                                totalDes = total - (total*(desc/100.0));
-                            }
-                            else{
-                                Toast.makeText(getApplicationContext(), "Ingrese Parametros descuento", Toast.LENGTH_LONG).show();
-                            }
-                        }
-                    }
-                    else{
-                        Toast.makeText(getApplicationContext(), "Ingrese Parametros General", Toast.LENGTH_LONG).show();
-                    }
-
-                    txtTotal.setText("Total $"+total);
-                    txtTotalDesc.setText("Total $"+totalDes);
-                }
-                catch (Exception ex){
-                    Toast.makeText(getApplicationContext(), "Error al ingresar parametros", Toast.LENGTH_LONG).show();
-                }
+                calcular();
                 break;
         }
     }
@@ -195,5 +146,36 @@ public class ModificarMiembro extends Activity implements OnClickListener {
         Intent home_intent = new Intent(getApplicationContext(),
                 MainActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(home_intent);
+    }
+    public void calcular(){
+        cant =0;desc=0;precio=0.0;total =0.0;totalDes=0.0;
+        try{
+            if(!etCant.getText().toString().equals("")){
+                cant = Integer.parseInt(etCant.getText().toString());
+            }
+            if(!etPrecio.getText().toString().equals("")){
+                precio = Double.valueOf(etPrecio.getText().toString()); //obtiene precio
+                total = cant * precio; //Calcula Total de la compra
+                if (estado){
+                    if (!etDesc.getText().toString().equals("")){
+                        desc = Integer.parseInt(etDesc.getText().toString());
+                        txtAhorro.setText("Ahorras $"+(total * (desc/100.0)));
+                        totalDes = total - (total*(desc/100.0));
+                    }
+                    else{
+                        // Toast.makeText(getApplicationContext(), "Ingrese Parametros descuento", Toast.LENGTH_LONG).show();
+                    }
+                }
+            }
+            else{
+                // Toast.makeText(getApplicationContext(), "Ingrese Parametros General", Toast.LENGTH_LONG).show();
+            }
+
+            txtTotal.setText("Total $"+total);
+            txtTotalDesc.setText("Total $"+totalDes);
+        }
+        catch (Exception ex){
+            Toast.makeText(getApplicationContext(), "Error al ingresar parametros", Toast.LENGTH_LONG).show();
+        }
     }
 }

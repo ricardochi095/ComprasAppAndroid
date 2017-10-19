@@ -14,21 +14,21 @@
             android:id="@+id/txtNombre11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="0.67"
             android:text="@string/nombre" />
 
         <TextView
             android:id="@+id/txtPrecio11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="0.58"
             android:text="@string/precio" />
 
         <TextView
             android:id="@+id/textCant11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="0.38"
             android:text="@string/cantidad" />
 
         <TextView
@@ -54,9 +54,11 @@
 
         <TextView
             android:id="@+id/miembro_nombre"
-            android:layout_width="103dp"
+            android:layout_width="126dp"
             android:layout_height="wrap_content"
+            android:gravity="left"
             android:padding="15dp"
+            android:textAlignment="textStart"
             android:textSize="17sp"
             android:textStyle="bold" />
 
@@ -65,14 +67,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/simboloPeso"
-            android:textSize="24sp" />
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/prod_precio"
-            android:layout_width="75dp"
-            android:layout_height="40dp"
+            android:layout_width="91dp"
+            android:layout_height="wrap_content"
             android:gravity="left"
-            android:textSize="24sp"
+            android:textSize="18sp"
             android:visibility="visible" />
 
         <TextView
@@ -81,12 +83,12 @@
             android:layout_height="wrap_content"
             android:text="@string/simboloMultiplicar"
             android:textColorLink="@android:color/holo_orange_dark"
-            android:textSize="24sp"
+            android:textSize="18sp"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/prod_cant"
-            android:layout_width="89dp"
+            android:layout_width="48dp"
             android:layout_height="wrap_content"
             android:gravity="left"
             android:textSize="24sp"
@@ -99,15 +101,16 @@
             android:layout_height="wrap_content"
             android:text="@string/simboloPeso"
             android:textColor="@android:color/holo_orange_light"
-            android:textSize="24sp"
+            android:textSize="18sp"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/prod_total"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="left"
             android:textColor="@android:color/holo_orange_light"
-            android:textSize="24sp"
+            android:textSize="18sp"
             android:textStyle="bold"
             android:visibility="visible" />
 

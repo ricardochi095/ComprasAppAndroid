@@ -62,8 +62,18 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="@string/nameDesc"
-            android:maxLength="2"
-            android:inputType="number" />
+            android:inputType="number"
+            android:maxLength="2" />
+
+        <TextView
+            android:id="@+id/txtAhorras"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/ahorras"
+            android:textColor="@android:color/holo_orange_light"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/txtTotalDesc"

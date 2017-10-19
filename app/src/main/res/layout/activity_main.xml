@@ -65,7 +65,7 @@
             android:id="@+id/txtNombre11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="0.61"
             android:text="@string/nombre"
             android:textStyle="bold" />
 
@@ -73,7 +73,7 @@
             android:id="@+id/txtPrecio11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="0.36"
             android:text="@string/precio"
             android:textStyle="bold" />
 
@@ -81,7 +81,7 @@
             android:id="@+id/textCant11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="0.31"
             android:text="@string/cantidad"
             android:textStyle="bold" />
 
